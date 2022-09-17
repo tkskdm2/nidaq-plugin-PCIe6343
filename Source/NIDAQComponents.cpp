@@ -552,7 +552,8 @@ void NIDAQmx::run()
 
 		if (getActiveDigitalLines() > 0)
 		{
-			if (isUSBDevice)
+			//if (isUSBDevice)
+			if (true)	
 				DAQmxErrChk(NIDAQ::DAQmxReadDigitalU32(
 					taskHandleDI,
 					numSampsPerChan,
@@ -603,7 +604,8 @@ void NIDAQmx::run()
 				ai_timestamp++;
 				if (getActiveDigitalLines() > 0)
 				{
-					if (isUSBDevice)
+					//if (isUSBDevice)
+					if (true)	
 						eventCode = di_data_32[count++] & getActiveDigitalLines();
 					else
 						eventCode = di_data_8[count++] & getActiveDigitalLines();
